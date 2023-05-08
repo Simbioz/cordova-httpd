@@ -1,5 +1,13 @@
 ## CorHttpd: embeded httpd for cordova ##
 
+### Modified with regards to the original project:
+
+- A www_root of `__documents__/files` results in an www root like so: ``
+- Responds with CORS headers allowing the Cordova app origin we're using in our app (hardcoded); modify this for your needs in `HTTPFileResponse` and `HTTPAsyncFileResponse`.
+- Uses `HTTPAsyncFileResponse` to better handle video and other large files.
+
+### Original Readme
+
 Supported platform:
 * iOS
 * Android
