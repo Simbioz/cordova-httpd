@@ -123,6 +123,7 @@
     NSDictionary* options = [command.arguments objectAtIndex:0];
 
     NSString* str = [options valueForKey:OPT_WWW_ROOT];
+    str = [str stringByReplacingOccurrencesOfString:@"__documents__" withString: [NSString stringWithFormat:@"%@/Documents", NSHomeDirectory()]];
     if(str) self.www_root = str;
 
     str = [options valueForKey:OPT_PORT];
