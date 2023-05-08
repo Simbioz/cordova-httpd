@@ -370,6 +370,13 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_WARN; // | HTTP_LOG_FLAG_TRACE;
 	return YES;
 }
 
+- (NSDictionary *)httpHeaders
+{
+    return @{
+        @"Access-Control-Allow-Origin": @"ripple://localhost"
+    };
+}
+
 - (void)connectionDidClose
 {
 	HTTPLogTrace();
