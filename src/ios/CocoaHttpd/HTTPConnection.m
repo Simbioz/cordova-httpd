@@ -1684,7 +1684,7 @@ static NSMutableArray *recentNonces;
 		// Use me instead for asynchronous file IO.
 		// Generally better for larger files.
 		
-                return [[[HTTPAsyncFileResponse alloc] initWithFilePath:filePath forConnection:self] autorelease];
+                return [[HTTPAsyncFileResponse alloc] initWithFilePath:filePath forConnection:self];
 	}
 	
 	return nil;
