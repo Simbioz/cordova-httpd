@@ -5,6 +5,7 @@
 - A www_root of `__documents__/myfiles` results in a server hosting files from: `/var/mobile/Containers/Data/Application/[app-uuid]/Documents/myfiles`
 - Responds with CORS headers allowing the Cordova app origin we're using in our app (hardcoded); modify this for your needs in `HTTPFileResponse` and `HTTPAsyncFileResponse`.
 - Uses `HTTPAsyncFileResponse` to better handle video and other large files.
+- Fixes SVG loading by providing the appropriate MIME type in response headers.
 
 ### Original Readme
 
