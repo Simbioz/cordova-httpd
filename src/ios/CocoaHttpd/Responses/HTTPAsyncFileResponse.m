@@ -370,13 +370,6 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_WARN; // | HTTP_LOG_FLAG_TRACE;
 	return YES;
 }
 
-- (NSDictionary *)httpHeaders
-{
-    return @{
-        @"Access-Control-Allow-Origin": @"ripple://localhost"
-    };
-}
-
 - (void)connectionDidClose
 {
 	HTTPLogTrace();
@@ -407,6 +400,17 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_WARN; // | HTTP_LOG_FLAG_TRACE;
 	
 	if (readBuffer)
 		free(readBuffer);
+}
+
+- (NSDictionary *)httpHeaders {
+    NSMutableDictionary *dict = [@{ @"Access-Control-Allow-Origin": @"ripple://localhost" } mutableCopy];
+    
+    // Add Content-Type header if SVG
+    if ([[filePath pathExtension] isEqualToString:@"svg"]) {
+        [dict setObject:@"image/svg+xml" forKey:@"Content-Type"];
+    }
+    
+    return dict;
 }
 
 @end
