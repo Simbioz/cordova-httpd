@@ -409,6 +409,11 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_WARN; // | HTTP_LOG_FLAG_TRACE;
     if ([[filePath pathExtension] isEqualToString:@"svg"]) {
         [dict setObject:@"image/svg+xml" forKey:@"Content-Type"];
     }
+
+    // Add Content-Type header if GLB
+    if ([[filePath pathExtension] isEqualToString:@"glb"]) {
+        [dict setObject:@"model/gltf-binary" forKey:@"Content-Type"];
+    }
     
     return dict;
 }
