@@ -1127,6 +1127,7 @@ public class NanoHTTPD
 			"ogv		video/ogg " +
 			"flv		video/x-flv " +
 			"mov		video/quicktime " +
+			"glb		model/gltf-binary " +
 			"swf		application/x-shockwave-flash " +
 			"js			application/javascript "+
 			"pdf		application/pdf "+
