@@ -100,6 +100,7 @@ public class CorHttpd extends CordovaPlugin {
         if(options == null) return null;
         
         www_root = options.optString(OPT_WWW_ROOT);
+	www_root = www_root.replaceFirst("__documents__", "/data/data/" + cordova.getContext().getPackageName() + "/files");
         port = options.optInt(OPT_PORT, 8888);
         localhost_only = options.optBoolean(OPT_LOCALHOST_ONLY, false);
         
