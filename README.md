@@ -2,7 +2,7 @@
 
 ### Modified with regards to the original project:
 
-- A www_root of `__documents__/myfiles` results in a server hosting files from `/var/mobile/Containers/Data/Application/[app-uuid]/Documents/myfiles` on iOS and from `/data/data/[package_name]/files` on Android.
+- A www_root of `__documents__` results in a server hosting files from `/var/mobile/Containers/Data/Application/[app-uuid]/Documents` on iOS and from `/data/data/[package_name]/files` on Android.
 - Responds with CORS headers allowing the Cordova app origin we're using in our app (hardcoded); modify this for your needs in `HTTPFileResponse` and `HTTPAsyncFileResponse`.
 - Uses `HTTPAsyncFileResponse` to better handle video and other large files.
 - Fixes SVG loading by providing the appropriate MIME type in response headers.
